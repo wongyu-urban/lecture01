@@ -5,7 +5,6 @@
 ## 로컬 미리보기
 
 ```powershell
-cd lecture01-site
 node preview-server.js
 ```
 
