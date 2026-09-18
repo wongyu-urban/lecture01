@@ -1,6 +1,26 @@
-# 서울대학교 환경대학원 소개 페이지
+# 공학 단위변환기
 
-별도 빌드 과정이 필요 없는 정적 웹페이지입니다.
+공학 시험과 과제에서 자주 사용하는 숫자 단위를 빠르게 변환하는 웹 앱입니다. 계산기 형태의 키패드로 값을 입력하고, 변환 전·후 단위를 선택해 결과를 확인할 수 있습니다.
+
+## 지원 단위
+
+- 길이: m, km, cm, mm, in, ft
+- 질량: kg, g, mg, lb, oz
+- 온도: °C, °F, K
+- 압력: Pa, kPa, MPa, bar, atm, psi
+
+## 사용 방법
+
+1. 변환할 종류를 선택합니다.
+2. 계산기 키패드 또는 입력창에 숫자를 입력합니다.
+3. 변환 전·후 단위를 선택합니다.
+4. `=` 버튼을 눌러 변환 결과를 확인합니다.
+
+## 과제 구현 요소
+
+- 함수: 단위 목록 생성, 온도 변환, 값 변환, 숫자 형식화, 결과 표시 기능을 함수로 구성했습니다.
+- 조건문: 온도 단위별 변환 공식과 숫자 입력 오류를 판별합니다.
+- 반복문: `forEach`로 단위 선택 메뉴와 카테고리 버튼을 반복 처리합니다.
 
 ## 로컬 미리보기
 
@@ -10,10 +30,8 @@ node preview-server.js
 
 브라우저에서 `http://localhost:4173`을 엽니다.
 
-## Cloudflare Pages 배포
+## Cloudflare Pages
 
-Cloudflare 계정 인증 후 다음 명령으로 배포합니다.
+배포 주소: https://unit-converter-85k.pages.dev
 
-```powershell
-npx wrangler pages deploy . --project-name snu-gses-intro
-```
+Cloudflare Pages 프로젝트 이름은 `unit-converter`입니다.
