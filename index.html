@@ -3,69 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="서울대학교 환경대학원 소개 페이지" />
-    <title>서울대학교 환경대학원 | Graduate School of Environmental Studies</title>
+    <meta name="description" content="공학 시험을 위한 숫자 단위 변환기" />
+    <title>공학 단위 변환기</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <section class="hero" id="top">
-        <nav class="nav" aria-label="주요 메뉴">
-          <a class="wordmark" href="#top"><span>SNU</span> GSES</a>
-          <button class="menu-button" aria-label="메뉴 열기" aria-expanded="false">MENU <span>+</span></button>
-          <div class="nav-links">
-            <a href="#about">대학원 소개</a><a href="#areas">연구 분야</a><a href="#future">함께할 미래</a>
+    <main class="page-shell">
+      <header class="site-header"><a class="brand" href="/">ENGINEERING TOOLKIT</a><span>LECTURE 01</span></header>
+      <section class="converter" aria-labelledby="page-title">
+        <p class="eyebrow">UNIT CONVERTER · EXAM EDITION</p>
+        <h1 id="page-title"><em>단위변환기</em></h1>
+        <p class="intro">길이, 질량, 온도, 압력 단위를 빠르게 변환하세요.</p>
+        <form id="converter-form" novalidate>
+          <div class="category-buttons" role="group" aria-label="변환 종류">
+            <button class="category active" type="button" data-category="length">길이</button>
+            <button class="category" type="button" data-category="mass">질량</button>
+            <button class="category" type="button" data-category="temperature">온도</button>
+            <button class="category" type="button" data-category="pressure">압력</button>
           </div>
-        </nav>
-
-        <div class="hero-copy">
-          <p class="eyebrow">SEOUL NATIONAL UNIVERSITY · EST. 1973</p>
-          <h1>환경의 질문을<br /><em>미래의 해답</em>으로.</h1>
-          <p class="lead">서울대학교 환경대학원은 사람, 도시, 자연이 조화롭게 공존하는 전환의 길을 연구합니다.</p>
-          <a class="text-link" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
-        </div>
-        <div class="hero-orbit" aria-hidden="true"><span>지속가능성</span><span>전환</span><span>공존</span></div>
-        <p class="vertical-label">GRADUATE SCHOOL OF ENVIRONMENTAL STUDIES</p>
-      </section>
-
-      <section class="intro section" id="about">
-        <p class="section-number">01 / ABOUT</p>
-        <div class="intro-grid">
-          <h2>복잡한 환경 문제를<br />새로운 시선으로<br /><em>읽어냅니다.</em></h2>
-          <div class="intro-text">
-            <p>환경 문제는 더 이상 자연만의 문제가 아닙니다. 기후위기, 자원과 에너지, 도시의 불평등, 삶의 방식까지 서로 얽혀 있습니다.</p>
-            <p>서울대학교 환경대학원은 학문 간 경계를 넘어, 우리 사회가 마주한 환경의 과제를 분석하고 실천 가능한 해법을 만듭니다.</p>
-            <a class="outlined-link" href="https://gses.snu.ac.kr" target="_blank" rel="noreferrer">공식 홈페이지 <span>↗</span></a>
+          <div class="calculator-panel">
+            <div class="display-wrap"><label for="value-input">INPUT</label><input id="value-input" type="text" inputmode="decimal" autocomplete="off" placeholder="0" /></div>
+            <div class="fields">
+            <label>변환 전<select id="from-unit" aria-label="변환 전 단위"></select></label>
+            <button id="swap-button" class="swap" type="button" aria-label="단위 교체">⇄</button>
+            <label>변환 후<select id="to-unit" aria-label="변환 후 단위"></select></label>
+            </div>
+            <div class="keypad" aria-label="숫자 키패드">
+              <button type="button" class="key key--clear" data-key="clear">AC</button><button type="button" class="key" data-key="backspace">⌫</button><button type="button" class="key" data-key="-">±</button>
+              <button type="button" class="key" data-key="7">7</button><button type="button" class="key" data-key="8">8</button><button type="button" class="key" data-key="9">9</button>
+              <button type="button" class="key" data-key="4">4</button><button type="button" class="key" data-key="5">5</button><button type="button" class="key" data-key="6">6</button>
+              <button type="button" class="key" data-key="1">1</button><button type="button" class="key" data-key="2">2</button><button type="button" class="key" data-key="3">3</button>
+              <button type="button" class="key key--zero" data-key="0">0</button><button type="button" class="key" data-key=".">.</button><button class="key key--equals" type="submit">=</button>
+            </div>
           </div>
-        </div>
+        </form>
+        <section id="result" class="result result--idle" aria-live="polite"><p class="result-label">READY</p><p class="result-value">값과 단위를 선택해 주세요.</p><p class="result-formula">공학 시험용 단위 변환 도구</p></section>
       </section>
-
-      <section class="fields section" id="areas">
-        <div class="fields-header"><p class="section-number">02 / FIELDS OF INQUIRY</p><p>지식은 연결될 때<br />변화를 만듭니다.</p></div>
-        <div class="field-list">
-          <article><span>01</span><h3>환경정책·계획</h3><p>증거에 기반한 정책과 공간 계획으로 지속가능한 사회의 기반을 설계합니다.</p><b>↗</b></article>
-          <article><span>02</span><h3>도시·지역환경</h3><p>살기 좋은 도시와 지역을 위해 사람과 장소, 생태계의 관계를 탐구합니다.</p><b>↗</b></article>
-          <article><span>03</span><h3>환경관리</h3><p>물, 대기, 폐기물과 에너지를 아우르는 과학적 관리의 방법을 모색합니다.</p><b>↗</b></article>
-          <article><span>04</span><h3>환경조경</h3><p>경관과 생태, 일상의 경험을 연결해 회복력 있는 공간을 만들어갑니다.</p><b>↗</b></article>
-        </div>
-      </section>
-
-      <section class="statement section">
-        <p class="section-number">03 / OUR PROMISE</p>
-        <blockquote>“환경을 이해하는 일은<br />더 나은 삶의 <em>조건</em>을<br />상상하는 일입니다.”</blockquote>
-        <div class="statement-note">RESEARCH · EDUCATION · ACTION<br />FOR A SUSTAINABLE TOMORROW</div>
-      </section>
-
-      <section class="future section" id="future">
-        <p class="section-number">04 / JOIN THE CONVERSATION</p>
-        <h2>더 나은 내일을<br /><em>함께 설계할</em> 시간</h2>
-        <a class="cta" href="https://gses.snu.ac.kr" target="_blank" rel="noreferrer"><span>서울대학교 환경대학원<br />더 알아보기</span><b>↗</b></a>
-      </section>
+      <aside class="note"><p>QUICK TIP</p><p>결과를 확인한 뒤<br />유효숫자를 한 번 더 점검하세요.</p></aside>
     </main>
-    <footer><a class="wordmark" href="#top"><span>SNU</span> GSES</a><p>서울특별시 관악구 관악로 1 · 서울대학교 환경대학원</p><p>© 2026 GSES, SNU. CONCEPT PAGE.</p></footer>
     <script src="script.js"></script>
   </body>
 </html>
