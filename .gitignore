@@ -1,0 +1,31 @@
+# Environment Secrets
+.env
+*.env
+
+# Cache & Environments
+__pycache__/
+.ipynb_checkpoints/
+.virtual_documents/
+.vscode/
+.claude/
+.venv/
+.conda/
+
+# Large archives
+*.zip
+
+# Nested standalone repos (each has its own .git)
+/rent/
+/seoul_rent/
+/seoul_rent_api/
+/prime-number_repo/
+
+# Separate scratch project, not part of the lecture series
+/geocoding_kakao/
+
+# Dropbox sync conflict copies
+*충돌된 사본*
+
+# Stray duplicate saves
+/Problem_set_01_answer.ipynb
+lecture03_data_visualization/03_2_plotly (1).ipynb
