@@ -29,4 +29,3 @@ __pycache__/
 # Stray duplicate saves
 /Problem_set_01_answer.ipynb
 lecture03_data_visualization/03_2_plotly (1).ipynb
-.wrangler/
